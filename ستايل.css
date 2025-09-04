@@ -1,0 +1,269 @@
+
+/* ===== الأساسيات ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(to bottom, #e6b980, #eacda3);
+  color: #2c2c2c;
+  font-family: 'Amiri', serif;
+}
+.hero {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 4rem auto;
+  gap: 2rem;
+  background: rgba(255, 248, 220, 0.7);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+}
+.herosub {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.title {
+  font-size: 1.4rem;
+  color: #8c6239;
+}
+
+.name {
+  padding: 1rem;
+  font-size: 3rem;
+  color: #5a3e1b;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+.arrow {
+  max-width: 400px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  border: 3px solid #d97706;
+}
+
+.text {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: rgba(255, 248, 220, 0.7);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.text h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #8b5e3c;
+  margin-bottom: 1.5rem;
+}
+
+.poem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  text-align: center;
+  color: #2c2c2c;
+}
+
+.verse {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+  gap: 1rem;
+  font-size: 1.5rem;
+  line-height: 2;
+}
+.story {
+  padding: 1rem;
+  font-size: 1.2rem; /* حجم عنوان فرعي */
+  color: #8c6239;
+}
+details {
+  margin: .8rem 0;
+  background: rgba(255, 248, 220, 0.7);
+  border-radius: 12px;
+  padding: .6rem 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,.05);
+}
+summary {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+}
+.explain {
+  margin-top: .5rem;
+  padding-top: .5rem;
+  border-top: 1px solid #ddd;
+  color: #555;
+  font-size: .95rem;
+}
+
+
+/* ===== ستايل بسيط متناسق لأزرار القصائد ===== */
+
+.poem-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;              /* مسافة أكبر بين الأزرار */
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;          /* مسافة أكبر حول القائمة */
+}
+
+.poem-list li {
+  margin: 0;
+}
+
+.poem-list a {
+  display: inline-block;
+  padding: 1rem 2rem;       /* حجم زر أكبر */
+  border-radius: 35px;      /* كبسولة أوضح */
+  background: rgba(255, 248, 220, 0.9); 
+  color: #3a200f;           /* بني أغمق */
+  font-size: 1.3rem;        /* خط أكبر */
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2); /* ظل أوضح */
+}
+
+.poem-list a:hover {
+  background: linear-gradient(to bottom, #e6b980, #c98c4a);
+  color: #1f1208;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+}
+
+.poem-list a:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.back-btn {
+  
+  display: inline-block;
+  padding: 0.5rem 0.5rem;       /* حجم زر أكبر */
+  border-radius: 35px;      /* كبسولة أوضح */
+  background: rgba(255, 248, 220, 0.9); 
+  color: #3a200f;           /* بني أغمق */
+  font-size: 1.3rem;        /* خط أكبر */
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2); /* ظل أوضح */
+}
+
+.back-btn:hover {
+ background: linear-gradient(to bottom, #e6b980, #c98c4a);
+  color: #1f1208;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+}
+/* ===== جعل الموقع متجاوب ===== */
+
+/* الشاشات المتوسطة (أجهزة التابلت) */
+@media (max-width: 992px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    margin: 3rem 1.5rem;
+    padding: 1.8rem;
+    gap: 1.5rem;
+  }
+
+  .name {
+    font-size: 2.4rem;
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .arrow {
+    max-width: 70%;
+  }
+
+  .verse {
+    grid-template-columns: 1fr 1fr; /* بيت الشعر تحت بعض */
+    font-size: 1.5rem;
+    line-height: 1.8;
+  }
+}
+
+/* الشاشات الصغيرة (جوال) */
+@media (max-width: 500px) {
+  .hero {
+    margin: 5rem 1rem 2rem;
+    padding: 1.2rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .name {
+    font-size: 1.8rem;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .arrow {
+    max-width: 100%;
+    border-radius: 12px;
+  }
+
+  /* النص */
+  .text {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .text h2 {
+    font-size: 1.4rem;
+  }
+
+  /* أزرار القصائد */
+  .poem-list {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .poem-list a {
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+  }
+
+  /* الأبيات */
+  .verse {
+    font-size: 0.77rem;
+    line-height: 1.6;
+    grid-template-columns: 1fr 1fr;
+  }
+  .explain {
+  font-size: .8rem;
+  }
+}
+@media (max-width: 400px) {
+  .verse {
+    font-size: 0.66rem;
+    line-height: 1.6;
+    grid-template-columns: 1fr 1fr;
+  }
+  .explain {
+  font-size: .66rem;
+  }
+
+
+}
